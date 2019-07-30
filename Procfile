@@ -1,1 +1,1 @@
-web: gunicorn Shope5.wsgi
+web: gunicorn shopify:app
