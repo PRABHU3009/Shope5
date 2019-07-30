@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{%block body%}
+<div class="jumbotron text-center">  
+	<h1>Edit Order Information</h1>  
+	<p class="lead">Contact Email informatin is editable but contact Phone information is not available in the JSON. I tried manually from shopify store to edit contact number but it is not updating once the order is created. </p>
+</div>
+<div>
+	<table id="customers" class="auto-index">
+		<thead>
+			<tr>
+			  	<th>Serial number</th>
+			    <th>Order Id</th>
+			    <th>Contact Email</th>
+			    <th>Edit</th>
+	  		</tr>
+		</thead>
+	  	<tbody>
+	  		{% for order in ordereditems%}
+			<tr>
+				<td></td>
+				<td>{{order.id}}</td>
+				<td>{{order.contact_email}}</td>
+				<td><a href="{{ url_for('edit_order',id=order.id) }}"><i class="material-icons" >edit</i><a></td>
+			</tr>
+	  	</tbody>
+		
+					
+		{%endfor%}
+	</table>	
+</div>
+{%endblock%}

@@ -1,0 +1,33 @@
+{% extends 'layout.html'%}
+
+
+{%block body%}
+<div class="jumbotron text-center">  
+	<h1>Displays all Created Orders</h1>  
+	<p class="lead">All Orders are listed from the mlab database</p>
+</div>
+<div>
+	<table id="customers" class="auto-index">
+		<thead>
+			<tr>
+			  	<th>Serial number</th>
+			    <th>Order Id</th>
+			    <th>Contact Email</th>
+		  </tr>
+		</thead>
+	  	<tbody>
+	  		{% for order in ordereditems%}
+			<tr>
+				<td></td>
+				<td>{{order.id}}</td>
+				<td>{{order.contact_email}}</td>
+			</tr>			
+		{%endfor%}
+
+	  	</tbody>
+	</table>
+
+</div>
+
+
+{%endblock%}
