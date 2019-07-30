@@ -4,7 +4,7 @@ import pymongo, os
 cfg = ConfigParser(interpolation=ExtendedInterpolation())
 cfg.read('config.ini')
 # uri=cfg['ENV_VARIABLES']['MONGO_URI']
-uri=os.os.environ['MONGO_URI']
+uri=os.environ['MONGO_URI']
 
 client = pymongo.MongoClient(uri,connectTimeoutMS=30000)
 db=client.get_database("shopify_orders")
