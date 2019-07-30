@@ -1,8 +1,13 @@
 from flask import Flask , render_template, request, redirect, url_for, Response, json
 from wtforms import Form, StringField, TextAreaField, validators
+from flask_assets import Bundle, Environment
 import database as db
 
 app = Flask(__name__)
+
+css= Bundle('style.css',output='static/style.css')
+assets=Environment(app)
+assets.register('main_css',css)
 
 class ArticleForm(Form):
     title = StringField('OrderId')
